@@ -6,15 +6,12 @@
     <div>
       <h1><a href="/">Canon Mukai</a></h1>
     </div>
+    {% for post in posts %}
     <div>
-      <p>published: 2020/07/04</p>
-      <h2><a href="">My first post</a></h2>
-      <p>初めまして、向井かのんです。</p>
+      <p>published: {{ post.published_date }}</p>
+      <p><a href="">{{ post.title }}</a></p>
+      <p>{{ post.text|linebreaksbr }}</p>
     </div>
-    <div>
-      <p>published: 2020/07/04</p>
-      <h2><a href="">My second post</a></h2>
-      <p>初めまして、向井かのんです。</p>
-    </div>
+    {% endfor %}
   </body>
 </html>
